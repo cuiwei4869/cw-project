@@ -1,0 +1,24 @@
+*{
+    padding:0;
+    margin:0;
+}
+.wrapper{
+    width:800px;
+    height:300px;
+    margin:100px auto;
+    border:1px solid #f40;
+    overflow: hidden;
+}
+ul{
+    width:3200px;
+    height:300px;
+    background-color:#000;
+}
+li{
+    float:left;
+    list-style:none;
+}
+img{
+    width:400px;
+    height:300px;
+}

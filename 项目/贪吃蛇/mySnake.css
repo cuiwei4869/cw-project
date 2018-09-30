@@ -1,0 +1,53 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    width:100%;
+    height:600px;
+    position: relative;
+}
+.box{
+    position: absolute;
+    width:65%;
+    height:65%;
+    margin:auto;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    border:1px solid red;
+}
+.sidebar{
+    margin-left:45%;
+}
+.ul li{
+    margin-top:5px;
+    list-style:none;
+    width:100px;
+    height:30px;
+    font-size:20px;
+    line-height:30px;
+    font-weight:bolder;
+    text-align:center;
+    cursor: pointer;
+    border-radius:30%;
+    color:#444;
+}
+.snake{
+    background-color:#fff;
+}
+.head{
+    background-image: url('head.jpg');
+    background-size: 30px 30px;
+    border-radius: 45%;
+}
+.food{
+    background-image: url('food.jpg');
+    background-size: 30px 30px;
+}
+.body{
+    background-image: url('body.jpg');
+    background-size: 30px 30px;
+}

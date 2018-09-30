@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul>
+            <li><img src="images/轮播图/1.jpg" alt=""></li>
+            <li><img src="images/轮播图/2.jpg" alt=""></li>
+            <li><img src="images/轮播图/3.jpg" alt=""></li>
+            <li><img src="images/轮播图/4.jpg" alt=""></li>
+            <li><img src="images/轮播图/5.jpg" alt=""></li>
+            <li><img src="images/轮播图/6.jpg" alt=""></li>
+            <li><img src="images/轮播图/1.jpg" alt=""></li>
+            <li><img src="images/轮播图/2.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        $(function () {
+            // 1.1添加setinterval让ul滚动
+            var num = 0;
+            var timer;
+            autoPlay(); 
+            function autoPlay() {
+                timer = setInterval(function () {
+                    $('ul').css({
+                        marginLeft: num -= 2
+                    })
+                    // 1.2当滚动的距离等于六张图片的宽度的时候，让ul恢复原来的位置
+                    if (num == -2400) {
+                        num = 0;
+                    }
+                }, 10)
+            }
+            // 2.1鼠标移动到li中的时候滚动停止
+            $('li').hover(function() {
+                clearInterval(timer);
+                // 2.1.1移入的时候滚动停止,并且非当前li添加透明度,当前的li去除透明度
+                $(this).fadeTo(100,1);
+                $(this).siblings().fadeTo(100,0.3);
+            },function() {  
+                // 2.2鼠标移出的时候滚动继续
+                autoPlay();
+                // 2.2.1移出的时候清除添加的透明度
+                $('li').fadeTo(100,1);
+            })
+
+
+
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

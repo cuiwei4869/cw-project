@@ -1,0 +1,133 @@
+*{
+    padding:0;
+    margin:0;
+}
+html,
+body{
+    width:100%;
+    height:100%;
+}
+.wrapper{
+    width:100%;
+    min-height:900px;
+    background-color:#FFE4E1;
+}
+.top{
+    width:100%;
+    height:60px;
+    background:url(images/weibo/top.png) no-repeat  0 0;
+    background-size:100% 60px;
+}
+.content{
+    width:100%;
+    min-height:500px;
+    display:flex;
+    flex-direction:row;
+}
+.content>.left{
+    flex:2;
+    background:url(images/weibo/left.png) no-repeat 0 0 ;
+    background-size:100% 100%;
+    height:700px;
+
+}
+.content>.middle{
+    flex:4;
+    
+}
+.middle>.text{
+    width:100%;
+    height:205px;
+    background:url(images/weibo/input.png) no-repeat 0 0;
+    background-size:100% 100%;
+    box-sizing:border-box;
+    padding:52px 12px 80px 15px;
+    position: relative;
+    border-bottom:1px solid #808080;
+}
+.middle>.text>textarea{
+    width:730px;
+    height:95px;
+    border:none;
+    resize:none;
+    overflow: hidden;
+    outline:none;
+    font-size:14px;
+    line-height:18px;
+}
+.text>button{
+    width:104px;
+    height:35px;
+    background-color:#f40;
+    color:#ffffff;
+    font-size:14px;
+    line-height:28px;
+    border:non;
+    position:absolute;
+    right:12px;
+    bottom:15px;
+
+}
+.middle>.microblog{
+    width:100%;
+    border-bottom:1px solid #808080;
+}
+.microblog>.info{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+}
+.microblog>.date{
+    width:100%;
+    text-align:center;
+}
+.microblog>.infoOperation{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    height:20px;
+}
+.infoOperation>a{
+    display:block;
+    text-decoration:none;
+    color:#808080;
+    flex:1;
+    font-size:12px;
+    box-sizing:border-box;
+    text-align:center;
+    line-height:20px;
+    padding-left:10px;
+}
+.infoOperation>a:nth-child(1){
+    background:url(images/weibo/1.png) no-repeat 70px 3px;
+    background-size:15px 15px;
+}
+.infoOperation>a:nth-child(2){
+    background:url(images/weibo/2.png) no-repeat 70px 3px;
+    background-size:15px 15px;
+}
+.infoOperation>a:nth-child(3){
+    background:url(images/weibo/3.png) no-repeat 70px 3px;
+    background-size:15px 15px;
+}
+.infoOperation>a:nth-child(4){
+    background:url(images/weibo/4.png) no-repeat 70px 3px;
+    background-size:15px 15px;
+}
+.infoOperation>a:not(:last-child){
+    border-right:1px solid #808080;
+
+}
+.content>.right{
+    flex:2;
+    background:url(images/weibo/right.png) no-repeat 0 0;
+    background-size:100% 100%;
+    height:700px;
+
+}
+.bottom{
+    width:100%;
+    height:300px;
+    background:url(images/weibo/bottom.png) no-repeat 0 0;
+    background-size:100% 100%;
+}

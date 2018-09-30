@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <script src="jquery-1.11.3/jquery.js"></script>
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 轮播图  -->
+    <div class="wrapper">
+        <div class="box">
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+            <img src="images/5.jpg" alt="">
+            <img src="images/6.jpg" alt="">
+        </div>
+        <div class="btn">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            // 1.给每一个li添加点击事件
+            $('li').click(function() {
+                // 2.点击的时候获取index，根据index改变相应的img的display；
+                var index = $(this).index();
+                var ele = $('.box>img').eq(index);
+                // ele.siblings().stop();
+                // ele.siblings().slideUp(1000);
+                ele.siblings().fadeOut(1000);
+                // ele.slideDown(1000);
+                ele.fadeIn(1000);
+                
+                // 3.同时让没有被索引到的img消失
+                
+            })
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

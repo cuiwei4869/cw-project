@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        div {
+            width: 400px;
+            height:200px;
+            margin-left:200px;
+            margin-top:100px;
+            overflow:hidden;
+        }
+        div ul {
+            width:2400px;
+            height:200px;
+        }
+        div ul li {
+            width:400px;
+            height:200px;
+            list-style:none;
+            float:left;
+            font-size:100px;
+            color:red;
+            font-weight:bolder;
+            text-align:center;
+            line-height:200px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div>
+        <ul>
+            <li style="background-image:url(1.jpg);background-size: 400px 200px;">1</li>
+            <li style="background-image:url(2.jpg);background-size: 400px 200px;">2</li>
+            <li style="background-image:url(3.jpg);background-size: 400px 200px;">3</li>
+            <li style="background-image:url(4.jpg);background-size: 400px 200px;">4</li>
+            <li style="background-image:url(5.jpg);background-size: 400px 200px;">5</li>
+            <li style="background-image:url(1.jpg);background-size: 400px 200px;">1</li>
+        </ul>
+    </div>
+  
+
+<script>
+
+var div = document.getElementsByTagName('div')[0];
+var ul = document.getElementsByTagName('ul')[0];
+var count = 0;
+var timer = setInterval(function(){
+    count += 1;
+    ul.setAttribute('style','margin-left:-'+ count +'px');
+    if ( count == 2000){
+        count = 0;
+    }
+},5)
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

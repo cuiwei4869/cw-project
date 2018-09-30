@@ -1,0 +1,37 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box !important;
+}
+html{
+    background-image:url('backgroundImage.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family:STHupo;
+}
+.wrapper{
+    width:500px;
+    height:400px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-200px;
+}
+.wrapper .box {
+    width:500px;
+    height:100px;
+    border-radius:10px;
+    font-size:60px;
+    line-height:100px;
+    text-align: center;
+}
+
+a{
+    width:50%;
+    height:100%;
+    display:inline-block;
+    text-decoration:none;
+    color:#dddddd;
+    text-align:center;
+}

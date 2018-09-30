@@ -1,0 +1,112 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    position: relative;
+    width:1000px;
+    height:600px;
+    padding:50px 40px 50px 40px;
+    margin:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:#20B2AA;
+    border:1px solid #008080;
+    box-shadow:10px 10px 5px #008080;
+    border-radius:10px;
+}
+.mineArea{
+    width:800px;
+    height:400px;
+    margin:100px ;
+    background-color:#FFFFE0;
+    border-radius:5px;
+    /* box-shadow:4px 4px 2px  #FFD700;  */
+
+}
+.box{   
+    position:absolute;
+    width:100px;
+    height:30px;
+    background-color:#FFFFE0;
+    box-shadow:4px 4px 2px  #FFD700; 
+    margin:10px;
+    text-align:center;
+    font-size:15px;
+    line-height:30px;
+    color:red;
+}
+.timeBox{
+    bottom:50px;
+    left:250px;
+}
+.mineBox{
+    bottom:50px;
+    right:250px;
+}
+.start{
+    width:300px;
+    height:200px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-150px;
+    margin-top:-100px;
+    background-color:#20B2AA;
+    border:1px solid #008080;
+    box-shadow:7px 7px 5px #008080;
+    text-align:center;
+    line-height:200px;
+    /* display:none; */
+}
+.startBtn{
+    display:inline-block;
+    font-size:40px;
+    line-height:40px;
+    color:#444;
+    cursor: pointer;
+}
+.mine{
+    width:38px;
+    height:38px;
+    float:left;
+    background-color:#808080 ;
+    border:1px solid #ccc;
+    box-shadow:1px 1px 1px inset #9ACD32;
+    text-align:center;
+    line-height:38px;
+    font-size:0px;
+}
+.boom{
+    background-image:url('mine.jpg');
+    background-size:38px 38px;
+    font-size:0px;
+}
+/* .isMine{
+    font-size:0;
+} */
+.saw,.saws{
+    background-color:#eee;
+}
+.flag{
+    background-image: url('flag.jpg');
+    background-size:38px 38px;
+}
+.win{
+    width:300px;
+    height:200px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-150px;
+    margin-top:-100px;
+    background-color:#20B2AA;
+    border:1px solid #008080;
+    box-shadow:7px 7px 5px #008080;
+    text-align:center;
+    line-height:200px;
+    display:none;
+}
