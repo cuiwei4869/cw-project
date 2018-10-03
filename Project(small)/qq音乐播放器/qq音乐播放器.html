@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <!-- <link rel="stylesheet" href="jquery.mCustomScrollbar.css"> -->
+    <link rel="stylesheet" href="qq音乐播放器.css">
+    <script src="jquery.js"></script>
+    <!-- <script src="jquery.mCustomScrollbar.concat.min.js"></script> -->
+    <script src="progressbar.js"></script>
+    <script src="control.js"></script>
+    <script src="Lyric.js"></script>
+    <script src="qq音乐播放器.js"></script>
+    <title>qq音乐播放器</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo"></div>
+        <div class="personalInfo">
+            <ul class="info">
+                <li></li>
+                <li>Time</li>
+                <li>设置</li>
+                <li>退出</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="content-in">
+            <div class="content-in-left">
+                <div class="content-in-left-top">
+                    <span class="tools">
+                        <li></li>收藏
+                    </span>
+                    <span class="tools">
+                        <li></li>添加到
+                    </span>
+                    <span class="tools">
+                        <li></li>下载
+                    </span>
+                    <span class="tools">
+                        <li></li>删除
+                    </span>
+                    <span class="tools">
+                        <li></li>清空列表
+                    </span>
+                </div>
+                <div class="content-in-left-bottom">
+
+                    <ul class="bottom-list">
+                        <li class="list-first">
+                            <div class="list-check"><span class="spanAll"></span></div>
+                            <div></div>
+                            <div class="list-name">歌曲</div>
+                            <div class="list-singer">歌手</div>
+                            <div class="list-time">时长</div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="content-in-right">
+                <div class="content-in-right-pic">
+                    <img src="imgs/music.jpg" title="有多少爱可以重来">
+                </div>
+                <div class="singer-info">
+                    <span>歌曲名：<a href="javascript:;">有多少爱可以重来</a></span>
+                    <span>歌手名：<a href="javascript:;">摩登兄弟刘宇宁</a></span>
+                    <span>专辑名：<a href="javascript:;">有多少爱可以重来</a></span>
+                </div>
+                <div class="lyrics">
+                    <div class="lyricsBox">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lyrics">
+            <div class="lyricsBox">
+                <p class="cure">崔伟</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-in">
+            <div class="function-left">
+                <a href="javascript:;" class="btn-pre"></a>
+                <a href="javascript:;" class="btn-play1"></a>
+                <a href="javascript:;" class="btn-next"></a>
+            </div>
+            <div class="function-middle">
+                <div class="function-middle-top">
+                    <a href="javascript:;">有多少爱可以重来</a>
+                    <span>-</span>
+                    <a href="javascript:;">摩登兄弟刘宇宁</a>
+                    <span>00:00/00:00</span>
+                </div>
+                <div class="function-middle-bar">
+                    <div class="line">
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="function-right">
+                <a href="javascript:;" class="btn-loop4"></a>
+                <a href="javascript:;" class="btn-collect1"></a>
+                <a href="javascript:;" class="btn-down"></a>
+                <a href="javascript:;" class="btn-comment"></a>
+                <a href="javascript:;" class="btn-pure1"></a>
+                <div class="btn-voice">
+                    <div class="pic pic1"></div>
+                    <div class="progressBar">
+                        <div class="line">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box"></div>
+    <div class="innerbox"></div>
+    <audio src=""></audio>
+</body>
+
+</html>
