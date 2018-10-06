@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>v-text&v-html</title>
+</head>
+
+<body>
+    <h1>v-text&v-html</h1>
+    <hr>
+    <div id="app">
+        <span>
+            {{message}}
+        </span>
+        =
+        <span v-text='message'></span><br>
+        <span v-html='cw'></span>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'cuiwei',
+                cw:'<h2>tomorrwo is mine</h2>'
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
