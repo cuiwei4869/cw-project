@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <title>Ajax</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 1000px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -150px;
+            border: 1px solid #808080;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .picBox {
+            flex: 3;
+            border: 1px solid #808080;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            width: 150px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-left: -75px;
+            margin-top: -100px;
+        }
+
+        .right {
+            flex: 7;
+            border: 1px solid #808080;
+            padding: 10px;
+            overflow: hidden;
+            background: #808080;
+        }
+
+        .name {
+            width: 100%;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .introduction {
+            width: 100%;
+            height: 100%;
+            background-color: #f40;
+            font-size: 18px;
+            color: #fff;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="picBox"><img src="" alt="">
+            <button class="kenan">柯南</button>
+            <button class="doctor">阿笠博士</button>
+            <button class="huiyuan">灰原哀</button>
+        </div>
+        <div class="right">
+            <div class="name"></div>
+            <div class="introduction"></div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // jQuery实现
+        // window.onload = function () {
+        //     var btn = $('button');
+        //     btn.click(function() {
+        //         var name = $(this).attr('class');
+        //         $.ajax({
+        //             type:'get',
+        //             url:'test.php',
+        //             success: function(msg) {
+        //                 var obj = JSON.parse(msg);
+        //                 var info = obj[name];
+        //                 $('img').attr('src',info.pic);
+        //                 $('.name').text(info.name);
+        //                 $('.introduction').text(info.introduction);
+        //             }
+        //         })
+        //     })
+        // }
+        // 原生js实现
+
+        window.onload = function () {
+            var btns = document.querySelectorAll('button');
+            var nameinfo = document.querySelector('.name');
+            var introductioninfo = document.querySelector('.introduction');
+            var pic = document.querySelector('img');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener('click', test);
+            }
+            function test(e) {
+                var name = e.target.getAttribute('class');
+                // 1.创建一个异步对象
+                var xmlhttp = new XMLHttpRequest();
+                // 2.设置请求的方式和请求的地址
+                xmlhttp.open('get', 'test.php', true);
+                // 3.发送请求
+                xmlhttp.send();
+                // 4.监听状态的变化
+                xmlhttp.onreadystatechange = function (e) {
+                    // 5.处理返回的结果
+                    if (xmlhttp.readyState == 4) {
+                        // 判断是否请求成功
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 || xmlhttp.status === 304) {
+                            // 请求成功 进行下一步操作
+                            // 拿到后端返回的数据
+                            var obj = xmlhttp.responseText;
+                            // 处理返回的数据并且显示给前端的浏览器
+                            var infos = JSON.parse(obj);
+                            var info = infos[name];
+                            nameinfo.innerText = info.name;
+                            introductioninfo.innerText = info.introduction;
+                            pic.setAttribute('src',info.pic);
+
+
+                        } else {
+                            // 请求不成功
+                            console.log('it is not finished');
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
