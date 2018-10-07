@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>mixins</title>
+</head>
+
+<body>
+    <h1>mixins!全局先执行，混入的局部的，然后是原生的</h1>
+    <hr>
+    <div id="app">
+        ${message}
+        <p><button @click='add(2)'>add</button></p>
+    </div>
+
+    <script>
+        var extendsObj = {
+            updated:function() {
+                console.log('我是扩展的updated');
+            },
+            methods:{
+                add:function() {
+                    this.message ++;
+                    console.log('我是扩展出来的add');
+                }
+            }
+        }
+        
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 0
+            },
+            methods: {
+                add: function (a) {
+                    this.message += a;
+                    console.log('我是原生的方法');
+                }
+            },
+            updated:function() {
+                console.log('原生的updated')
+            },//原生的在混入的之后执行
+            extends:extendsObj,
+            delimiters:['${','}']
+        });
+
+
+
+    </script>
+</body>
+
+</html>

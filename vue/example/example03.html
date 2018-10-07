@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/jquery.js"></script>
+    <title>example03</title>
+</head>
+
+<body>
+    <h1>example03!</h1>
+    <hr>
+    <div id="app">
+        {{message}} <br>
+
+        <button @click='add()'>add</button>
+        <!-- <button @click = 'reduce()'>reduce</button> -->
+    </div>
+    <button onclick='reduce()'>reduce</button> <br>
+    <button onclick='reduceOnce()'>reduce</button> <br>
+    <button onclick='off()'>off</button>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 0
+            },
+            methods: {
+                add: function () {
+                    this.message++;
+                }
+            }
+        });
+        app.$on('reduce', function () {
+            console.log('执行了reduce方法');
+            this.message--;
+        });
+        app.$once('reduceOnce', function () {
+            console.log('执行了reduceOnce方法');
+            this.message--;
+        });
+        function reduce() {
+            app.$emit('reduce');
+        }
+        function reduceOnce() {
+            app.$emit('reduceOnce');
+        }
+        function off() {
+            app.$off('reduce');
+            app.$off('reduceOnce');
+        }
+
+
+    </script>
+</body>
+
+</html>

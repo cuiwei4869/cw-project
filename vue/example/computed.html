@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>computed</title>
+</head>
+
+<body>
+    <h1>computed!</h1>
+    <hr>
+    <div id="app">
+        {{newPrice}}
+        <ul>
+            <li v-for='item in reverseNews'>{{item.title}}--{{item.data}}</li>
+        </ul>
+    </div>
+
+    <script>
+        var newsList = [
+            { title: '1这资料是从69个国家收集来的', data: '2018.10.5' },
+            { title: '2这资料是从69个国家收集来的', data: '2018.10.6' },
+            { title: '3这资料是从69个国家收集来的', data: '2018.10.7' },
+            { title: '4这资料是从69个国家收集来的', data: '2018.10.8' },
+        ];
+        var app = new Vue({
+            el: '#app',
+            data: {
+                price: 100,
+            },
+            computed: {
+                newPrice: function () {
+                    return this.price = '￥' + this.price + '元';
+                },
+                reverseNews:function() {
+                    return newsList.reverse();
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

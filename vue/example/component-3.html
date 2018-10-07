@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>component-3</title>
+    <style>
+        leslie {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>component-3</h1>
+    <hr>
+    <div id="app1">
+        <leslie v-bind:live-here='home'>123123</leslie>
+    </div>
+
+
+
+
+    <script>
+        var city = {
+            template: `<div style='color:green;'>GanSu of China</div>`
+        }
+        var leslieComponent = {
+            template: `
+            <div>
+                <p>leslie from China!</p>
+                <city></city>
+            </div>
+            `,
+            components: {
+                'city': city
+            }
+        }
+        var app1 = new Vue({
+            el: '#app1',
+            components: {
+                'leslie': leslieComponent
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

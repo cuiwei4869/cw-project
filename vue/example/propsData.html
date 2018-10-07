@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>propsData Option</title>
+</head>
+<body>
+    <h1>propsData Option</h1>
+    <hr>
+    <header></header>
+
+    <script>
+        var header_a = Vue.extend({
+            template:`<p>{{message}}---{{a}}</p>`,
+            data:function() {
+                return {
+                    message:'Hello, I am Header!'
+                }
+            },
+            props:['a']
+        })
+        new header_a({propsData:{a:12}}).$mount('header');
+    
+    
+    </script>
+</body>
+</html>

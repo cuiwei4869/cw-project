@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>methods</title>
+</head>
+
+<body>
+    <h1>methods!</h1>
+    <hr>
+    <div id="app">
+        {{message}} <br>
+        <button @click='add(2,$event)'>add</button>
+        <button v-on:click='reduce'>reduce</button>
+        <p>
+            <btn @click.native='add(2,$event)'></btn>
+        </p>
+    </div>
+    <button onclick='app.add(-3)'>外部add</button>
+
+
+
+
+
+    <script>
+        var btn = {
+            template: `<button>组件add</button>`
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 0
+            },
+            components: {
+                'btn':btn
+            },
+            methods: {
+                add: function (a, event) {
+                    if (a == '') {
+                        this.message++
+                    } else {
+                        this.message += a;
+                    }
+                    console.log(event);
+                },
+                reduce: function () {
+                    this.message--;
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

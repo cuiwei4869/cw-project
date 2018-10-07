@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <title>component-4</title>
+</head>
+
+<body>
+    <h1>component-4</h1>
+    <hr>
+    <div id="app1">
+        <component>
+            <componentA v-bind:is='cw'></componentA>
+            <button @click='changeComponent'>change Component</button>
+        </component>
+    </div>
+
+
+
+
+    <script>
+        var componentA = {
+            template: `<div style='color:green;'>I am componentA</div>`
+        }
+        var componentB = {
+            template: `<div style='color:red;'>I am componentB</div>`
+        }
+        var componentC = {
+            template: `<div style='color:blue;'>I am componentC</div>`
+        }
+
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                cw:'componentA'
+            },
+            components: {
+                'componentA':componentA,
+                'componentB':componentB,
+                'componentC':componentC
+            },
+            methods:{
+                changeComponent:function() {
+                    if(this.cw == 'componentA'){
+                        this.cw = 'componentB';
+                    }else if(this.cw == 'componentB'){
+                        this.cw = 'componentC';
+                    }else {
+                        this.cw = 'componentA';
+                    }
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

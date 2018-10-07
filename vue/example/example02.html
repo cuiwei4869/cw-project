@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/jquery.js"></script>
+    <title>example02</title>
+</head>
+
+<body>
+    <h1>example02!</h1>
+    <hr>
+    <div id="app">
+    </div>
+    <p><button onclick='destroy()'>销毁</button></p>
+    <p><button onclick='refresh()'>refresh</button></p>
+    <p><button onclick='tick()'>tick</button></p>
+    <script>
+        var cw = Vue.extend({
+            template: `<p>{{message}}</p>`,
+            data: function () {
+                return {
+                    message: 'Hello,I am CW!'
+                }
+            },
+            mounted: function () {
+                console.log('mounted 被创建');
+            },
+            destroyed: function () {
+                console.log('destroy 被销毁');
+            },
+            updated: function () {
+                console.log('update 更新之后');
+            }
+        })
+
+        var vm = new cw().$mount('#app')
+        function destroy() {
+            vm.$destroy();
+        }
+        function refresh() {
+            vm.$forceUpdate();
+        }
+        function tick() {
+            vm.message = ('update message info');
+            vm.$nextTick(function () {
+                console.log('message更新完后被调用了');
+            });
+        }
+    </script>
+</body>
+
+</html>
