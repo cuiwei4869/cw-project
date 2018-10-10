@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+fdsaf
+fsdaf fsadf
+    <script>
+        $(function($) {
+            $.ajax({
+                type:'get',
+                dataType:'jsonp',
+                url:'http://localhost:8001/test',
+                success: function() {
+                    console.log('finished');
+                },
+                error: function() {
+                    console.log('false');
+                }
+            })
+        })
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
