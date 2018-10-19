@@ -13,21 +13,56 @@
 fdsaf
 fsdaf fsadf
     <script>
-        $(function($) {
-            $.ajax({
-                type:'get',
-                dataType:'jsonp',
-                url:'http://localhost:8001/test',
-                success: function() {
-                    console.log('finished');
-                },
-                error: function() {
-                    console.log('false');
+        // $(function($) {
+        //     $.ajax({
+        //         type:'get',
+        //         dataType:'jsonp',
+        //         url:'http://localhost:8001/test',
+        //         success: function() {
+        //             console.log('finished');
+        //         },
+        //         error: function() {
+        //             console.log('false');
+        //         }
+        //     })
+        // })
+            // 求1-100以内的质数
+            // function numbers() {
+            //     const nums = [];
+            //     for(let i = 0; i < 100; i++) {
+            //         let k = 0;
+            //         for(let j = 2; j < i; j ++){
+            //             if(i%j == 0) {
+            //                 console.log(i + '不是质数');
+            //                 break;
+            //             }else{
+            //                 k ++;
+            //             }
+            //         }
+            //         if(k !== 0){
+            //             k = 0;
+            //             continue;
+            //         }else{
+            //             console.log(i + '是质数');
+            //             nums.push(i);
+            //             k = 0;
+            //         }
+            //     }
+            //     return nums;
+            // }
+            function test() {
+                const nums = [];
+                for(let i = 2; i < 100; i ++){
+                    for(let j = 2; j < i; j ++){
+                        if(i % j === 0) {
+                            break;
+                        }else if(j === i -1) {
+                            nums.push(i);
+                        }
+                    }
                 }
-            })
-        })
-
-
+                return nums;
+            }
 
 
 
