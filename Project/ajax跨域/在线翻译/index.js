@@ -1,7 +1,7 @@
 // 处理字符串
 
 // var url = 'http://api.fanyi.baidu.com/api/trans/vip/translate',
-//     q = 'you are so cute',
+//     q = 'apple',
 //     q1 = encodeURI("你今天好漂亮"),
 //     from = 'auto',
 //     to = 'zh',

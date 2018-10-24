@@ -1,16 +1,3 @@
-/*!
- * jQuery JavaScript Library v1.11.3
- * http://jquery.com/
- *
- * Includes Sizzle.js
- * http://sizzlejs.com/
- *
- * Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
- * Released under the MIT license
- * http://jquery.org/license
- *
- * Date: 2015-04-28T16:19Z
- */
 
 (function( global, factory ) {
 
@@ -10292,9 +10279,6 @@ jQuery.fn.size = function() {
 
 jQuery.fn.andSelf = jQuery.fn.addBack;
 
-
-
-
 // Register as a named AMD module, since jQuery can be concatenated with other
 // files that may use define, but not via a proper concatenation script that
 // understands anonymous AMD modules. A named AMD is safest and most robust
@@ -10313,9 +10297,6 @@ if ( typeof define === "function" && define.amd ) {
 		return jQuery;
 	});
 }
-
-
-
 
 var
 	// Map over jQuery in case of overwrite
@@ -10342,9 +10323,6 @@ jQuery.noConflict = function( deep ) {
 if ( typeof noGlobal === strundefined ) {
 	window.jQuery = window.$ = jQuery;
 }
-
-
-
 
 return jQuery;
 
