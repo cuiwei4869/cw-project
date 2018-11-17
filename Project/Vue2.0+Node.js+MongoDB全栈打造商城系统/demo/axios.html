@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script> -->
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 20px;
+            font-size: 18px;
+            line-height: 20px;
+            background-color: #f40;
+            color: #fff;
+        }
+
+        .textBox {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>click me!</button>
+    <div id="textBox"></div>
+
+    <script>
+        function request() {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function (e) {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304) {
+                        document.getElementById('textBox').innerText = xmlHttp.responseText;
+                        console.log(xmlHttp.response);
+                    }
+                }
+            }
+            // xmlHttp.open('GET', "https://www.easy-mock.com/mock/5bd6ac9cbc9d684fc1f12c12/example/cuiwei/smilevue", true);
+            xmlHttp.open('GET', "http://api.fanyi.baidu.com/api/trans/vip/translate?callback=jQuery111308749799215647367_1541229097739&q=%E4%BD%A0%E6%98%AF%E8%B0%81&appid=20181018000221205&salt=1541229097908&from=auto&to=en&sign=b06cb076a7b00008807322b91172520d&_=1541229097741", true);
+            xmlHttp.send();
+        }
+        var btn = document.getElementsByTagName('button')[0];
+        btn.addEventListener('click',function(){
+            request();
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
